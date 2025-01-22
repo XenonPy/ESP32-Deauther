@@ -21,67 +21,94 @@ void handle_root() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32-Deauther</title>
+    <title>XePy's Deauther</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #3498db;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #2980b9;
-        }
+        /* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: #33ff33; /* Hacker green */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000; /* Black background */
+}
+
+/* Headings */
+h1, h2 {
+    color: #00ff00; /* Bright green */
+    font-weight: bold;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #111; /* Darker background */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #33ff33;
+    color: #33ff33;
+}
+
+th {
+    background-color: #004400; /* Dark green */
+    color: #00ff00;
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: #002200; /* Slightly lighter dark green */
+}
+
+/* Form Styling */
+form {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid #33ff33;
+}
+
+/* Inputs and Buttons */
+input[type="text"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #33ff33;
+    border-radius: 4px;
+    background-color: #000;
+    color: #33ff33;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #004400;
+    color: #00ff00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #006600;
+    box-shadow: 0 0 10px #00ff00;
+}
+
     </style>
 </head>
 <body>
-    <h1>ESP32-Deauther</h1>
+    <h1>XePy's Deauther</h1>
     
-    <h2>WiFi Networks</h2>
+    <h2>Targets List</h2>
     <table>
         <tr>
             <th>Number</th>
@@ -175,41 +202,57 @@ void handle_deauth() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deauth Attack</title>
+    <title>Attack</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .alert {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        .alert.error {
-            background-color: #f44336;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #008CBA;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #005f73;
-        }
+        /* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Black background */
+    color: #33ff33; /* Hacker green */
+}
+
+/* Alert Box */
+.alert {
+    background-color: #004400; /* Dark green */
+    color: #00ff00; /* Bright green text */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.3);
+    text-align: center;
+    border: 1px solid #33ff33;
+}
+
+/* Error Alert */
+.alert.error {
+    background-color: #440000; /* Dark red */
+    color: #ff3333; /* Bright red for errors */
+    border: 1px solid #ff3333;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #003300; /* Dark green */
+    color: #00ff00; /* Hacker green text */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #33ff33;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #006600;
+    box-shadow: 0 0 10px #00ff00;
+}
+
     </style>
 </head>
 <body>
@@ -249,36 +292,48 @@ void handle_deauth_all() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deauth All Networks</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .alert {
-            background-color: #ff9800;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #008CBA;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #005f73;
-        }
+        /* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Black background */
+    color: #33ff33; /* Hacker green text */
+}
+
+/* Alert Box */
+.alert {
+    background-color: #004400; /* Dark green */
+    color: #00ff00; /* Bright green text */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.3);
+    text-align: center;
+    border: 1px solid #33ff33;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #003300; /* Dark green */
+    color: #00ff00; /* Hacker green text */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #33ff33;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #006600;
+    box-shadow: 0 0 10px #00ff00;
+}
+
     </style>
 </head>
 <body>
